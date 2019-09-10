@@ -5,7 +5,7 @@ module.exports = android = (grunt) ->
 
   copyApk = (fn) ->
     phonegapPath = helpers.config 'path'
-    srcDir = path.join phonegapPath, 'platforms', 'android', 'bin'
+    srcDir = path.join phonegapPath, 'platforms', 'android', 'app', 'build', 'outputs', 'apk', 'release'
     releaseName = helpers.config 'releaseName'
     src = grunt.file.expand("#{srcDir}/*-release.apk")[0]
     dest = path.join helpers.config('releases'), 'android', "#{releaseName}.apk"
